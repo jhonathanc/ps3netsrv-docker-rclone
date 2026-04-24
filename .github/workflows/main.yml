@@ -30,9 +30,9 @@ jobs:
           unzip artifact.zip
 
           # Ajuste conforme o nome real dentro do zip
-          mv ps3netsrv /usr/bin/ps3netsrv || mv */ps3netsrv ./ps3netsrv
-
           chmod +x ps3netsrv
+
+          ls -lah
 
       - name: Log in to GHCR
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
